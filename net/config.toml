@@ -12,4 +12,4 @@ p2p-port=30303
 rpc-http-enabled=true
 rpc-http-api=["DEBUG", "ETH", "WEB3", "NET", "TRACE", "QBFT", "TXPOOL", "ADMIN", "PERM", "EEA", "PRIV"]
 rpc-http-authentication-enabled=false
-sync-mode="FAST"
+sync-mode="X_SNAP"

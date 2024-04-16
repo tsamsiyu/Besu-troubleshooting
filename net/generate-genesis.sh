@@ -1,7 +1,10 @@
 #!/bin/sh
 
+rm -rf /gen
+rm -rf /newkeys
+
 besu operator generate-blockchain-config \
-  --config-file=genesis-config.json \
+  --config-file=/net/genesis-config.json \
   --to=/gen \
   --private-key-file-name=key
 
@@ -17,5 +20,5 @@ done
 
 rm -rf /keys/*
 mv /newkeys/* /keys/
-mv -f /gen/genesis.json /net/genesis.json
+mv -f /gen/genesis.json /net/
 

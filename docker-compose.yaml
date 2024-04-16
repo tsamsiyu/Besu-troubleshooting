@@ -12,6 +12,7 @@ services:
 
   node1:
     restart: "no"
+    user: root
     image: hyperledger/besu:24.3.0
     volumes:
       - ./net:/net
