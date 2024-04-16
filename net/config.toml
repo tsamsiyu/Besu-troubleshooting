@@ -1,0 +1,15 @@
+#bootnodes=["enode://ea51aef0bc49865b95cbe37b29f23c69c7a7709c0cacac687ada7e310390a95207a6f84bb469084be2d32d3acfa080abd5390468210db94a7bc00ee8e45904a5@172.16.139.11:30303"]
+bootnodes=["enode://f94cec9a82baf5ecdcfbff1231e3d56e0c130f9152e78c01d0d02c762106477060e04333dc1b08d0e7c80530824f75cd4d5812f9c9ef2e1f41b4431022f22563@172.16.139.12:30303"]
+data-path="/data"
+discovery-enabled=true
+genesis-file="/net/genesis.json"
+host-allowlist=["*"]
+logging="DEBUG"
+max-peers=25
+node-private-key-file="/node/key"
+p2p-enabled=true
+p2p-port=30303
+rpc-http-enabled=true
+rpc-http-api=["DEBUG", "ETH", "WEB3", "NET", "TRACE", "QBFT", "TXPOOL", "ADMIN", "PERM", "EEA", "PRIV"]
+rpc-http-authentication-enabled=false
+sync-mode="FAST"

@@ -1,0 +1,23 @@
+{
+  "alloc" : { },
+  "coinbase" : "0x0000000000000000000000000000000000000000",
+  "config" : {
+    "chainId" : 85621,
+    "contractSizeLimit" : 2147483647,
+    "londonBlock" : 0,
+    "qbft" : {
+      "blockperiodseconds" : 2,
+      "epochlength" : 30000,
+      "requesttimeoutseconds" : 10
+    },
+    "zeroBaseFee" : true
+  },
+  "difficulty" : "0x1",
+  "gasLimit" : "0x1fffffffffffff",
+  "gasUsed" : "0x0",
+  "mixHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "nonce" : "0x0",
+  "parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "timestamp" : "0x58ee40ba",
+  "extraData" : "0xf87aa00000000000000000000000000000000000000000000000000000000000000000f85494e19a03bbb87ab821463fce491901784dda46da3c941f56d49b97d06e6f1f878ac69e387d5d3168d64b9461f6cc636a5db246296993f091f756d5975f485b9459f9c508b8050d233a5905e83a974e0f6a8a59b0c080c0"
+}

@@ -1,0 +1,137 @@
+version: '3.6'
+
+networks:
+  mynet:
+    name: mynet
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.139.0/24
+
+services:
+
+  generate-genesis:
+    restart: "no"
+    image: hyperledger/besu:24.3.0
+    volumes:
+      - ./net:/net
+      - ./keys:/keys
+    entrypoint:
+      - /net/generate-genesis.sh
+
+  #  node0:
+#    restart: "no"
+#    image: hyperledger/besu:24.3.0
+#    volumes:
+#      - ./net:/net
+#      - ./node0:/node
+#      - ./data/node0:/data
+#    ports:
+#      - 21001:8545/tcp
+#      - 30303/udp
+#      - 30303
+#      - 9545
+#    entrypoint:
+#      - /bin/bash
+#      - -c
+#      - /opt/besu/bin/besu --config-file=/net/config.toml --p2p-host=$$(hostname -i) --min-gas-price=0
+#    environment:
+#      - OTEL_RESOURCE_ATTRIBUTES=service.name=node0,service.version=24.3.0
+#    networks:
+#      mynet:
+#        ipv4_address: 172.16.139.11
+
+  node1:
+    restart: "no"
+    image: hyperledger/besu:24.3.0
+    volumes:
+      - ./net:/net
+      - ./keys/0:/node
+      - ./data/node1:/data
+    ports:
+      - 21002:8545/tcp
+      - 30303/udp
+    entrypoint:
+      - /bin/bash
+      - -c
+      - /opt/besu/bin/besu --config-file=/net/config.toml --p2p-host=$$(hostname -i) --min-gas-price=0
+    environment:
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=node1,service.version=24.3.0
+    networks:
+      mynet:
+        ipv4_address: 172.16.139.12
+
+  node2:
+    restart: "no"
+    image: hyperledger/besu:24.3.0
+    volumes:
+      - ./net:/net
+      - ./keys/1:/node
+      - ./data/node2:/data
+    ports:
+      - 21003:8545/tcp
+      - 30303/udp
+    entrypoint:
+      - /bin/bash
+      - -c
+      - /opt/besu/bin/besu --config-file=/net/config.toml --p2p-host=$$(hostname -i) --min-gas-price=0
+    environment:
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=node2,service.version=24.3.0
+    networks:
+      mynet:
+        ipv4_address: 172.16.139.13
+
+  node3:
+    restart: "no"
+    image: hyperledger/besu:24.3.0
+    volumes:
+      - ./net:/net
+      - ./keys/2:/node
+      - ./data/node3:/data
+    ports:
+      - 21004:8545/tcp
+      - 30303/udp
+    entrypoint:
+      - /bin/bash
+      - -c
+      - /opt/besu/bin/besu --config-file=/net/config.toml --p2p-host=$$(hostname -i) --min-gas-price=0
+    environment:
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=node3,service.version=24.3.0
+    networks:
+      mynet:
+        ipv4_address: 172.16.139.14
+
+  node4:
+    restart: "no"
+    image: hyperledger/besu:24.3.0
+    volumes:
+      - ./net:/net
+      - ./keys/3:/node
+      - ./data/node4:/data
+    ports:
+      - 21005:8545/tcp
+      - 30303/udp
+    entrypoint:
+      - /bin/bash
+      - -c
+      - /opt/besu/bin/besu --config-file=/net/config.toml --p2p-host=$$(hostname -i) --min-gas-price=0
+    environment:
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=node4,service.version=24.3.0
+    networks:
+      mynet:
+        ipv4_address: 172.16.139.15
+
+  # nc -vzu 172.16.139.12:30303
+  debug:
+    restart: "no"
+    image: alpine
+    volumes:
+      - ./net:/net
+      - ./keys/0:/node
+    entrypoint:
+      - /bin/sh
+      - -c
+      - sleep 100000
+    networks:
+      mynet:
+        ipv4_address: 172.16.139.33

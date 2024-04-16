@@ -1,0 +1,30 @@
+{
+  "blockchain": {
+    "nodes": {
+      "count": 4,
+      "generate": true
+    }
+  },
+  "genesis": {
+    "alloc": {},
+    "coinbase": "0x0000000000000000000000000000000000000000",
+    "config": {
+      "chainId": 85621,
+      "contractSizeLimit": 2147483647,
+      "londonBlock": 0,
+      "qbft": {
+        "blockperiodseconds": 2,
+        "epochlength": 30000,
+        "requesttimeoutseconds": 10
+      },
+      "zeroBaseFee": true
+    },
+    "difficulty": "0x1",
+    "gasLimit": "0x1fffffffffffff",
+    "gasUsed": "0x0",
+    "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "nonce": "0x0",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "timestamp": "0x58ee40ba"
+  }
+}
