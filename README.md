@@ -1,0 +1,1 @@
+> Every time you re-generate keys, you have to change manually set new value into bootnodes property in net/config.toml file 
